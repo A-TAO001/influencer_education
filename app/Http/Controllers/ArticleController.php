@@ -11,6 +11,6 @@ class ArticleController extends Controller
 
     $articles = Article::all();
 
-        return view('article');
+        return view('article', compact('articles'));
     }
 }

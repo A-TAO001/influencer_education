@@ -1,29 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="ja">
 <head>
-<meta charset="UTF-8">
-        <title>お知らせ</title>
+    <meta charset="UTF-8">
+    <title>お知らせ</title>
+    <link rel="stylesheet" href="{{ asset('/css/article.css') }}">
 </head>
+<body>
 
-@extends('layouts.app')
-
-@section('content')
-
-<div style = background:salmon pink> 
-
-<div class="article">
 <header>
 <br>
-<br>
-<a href="#" class="btn btn-success mb-3">時間割</a>
-<a href="#" class="btn btn-success mb-3">授業進捗</a>
-<a href="#" class="btn btn-success mb-3">プロフィール設定</a>
-<a href="#" class="btn btn-black mb-3"margin-right>ログアウト</a>
-    <br>
+<a href="#" class="btn">時間割</a>
+<a href="#" class="btn">授業進捗</a>
+<a href="#" class="btn">プロフィール設定</a>
+<a href="#" class="btn1">ログアウト</a>
 </header>
-</div>
-<body>
-<a href="#" class="btn btn-black mb-3">←戻る</a>
-<h1>お知らせタイトル</h1>
-<h2>お知らせ本文</h2>
 
+<a href="#" class = "back">←戻る</a>
+
+<div class ="main">
+@foreach($articles as $article)
+    <p class= "date">{{ $article->posted_date }}</p>
+    <p class= "title">{{ $article->title }}</p>
+    <p class= "contents">{{ $article->article_contents }}</p>
+    @endforeach
+</div>
 </body>
-@endsection
