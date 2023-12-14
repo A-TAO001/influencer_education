@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('classes_clear_checks', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->integer('users_id');
             $table->integer('classes_id');
             $table->tinyInteger('clear_flg');

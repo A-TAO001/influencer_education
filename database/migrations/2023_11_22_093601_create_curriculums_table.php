@@ -13,15 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('curriculums', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('name_kana');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('profile_image');
+            $table->string('title', 255)->nullable();
+            $table->string('thumbnail', 255)->nullable();
+            $table->longText('description');
+            $table->mediumText('video_url');
+            $table->tinyInteger('alway_delivery_flg')->nullable();
             $table->unsignedBigInteger('classes_id');
             $table->timestamps();
+            
+            $table->foreign('classes_id')->references('id')->on('classes');
         });
     }
 
@@ -32,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('curriculums');
     }
 };

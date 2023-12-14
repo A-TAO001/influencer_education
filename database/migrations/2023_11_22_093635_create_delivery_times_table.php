@@ -13,15 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('delivery_times', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('name_kana');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('profile_image');
-            $table->unsignedBigInteger('classes_id');
+            $table->unsignedBigInteger('curriculums_id');
+            $table->dateTime('delivery_from')->nullable();
+            $table->dateTime('delivery_to')->nullable();
             $table->timestamps();
+            $table->foreign('curriculums_id')->references('id')->on('curriculums');
         });
     }
 
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('delivery_times');
     }
 };
