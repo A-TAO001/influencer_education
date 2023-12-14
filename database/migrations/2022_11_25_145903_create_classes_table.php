@@ -13,15 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('curriculum_progress', function (Blueprint $table) {
+        Schema::create('classes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('curriculumus_id')->constrained();
-            $table->foreignId('users_id')->constrained();
-            $table->unsignedTinyInteger('clear_flg');
+            $table->string('name');
             $table->timestamps();
         });
     }
 
+    
     /**
      * Reverse the migrations.
      *
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('curriculum_progress');
+        Schema::dropIfExists('classes');
     }
 };
