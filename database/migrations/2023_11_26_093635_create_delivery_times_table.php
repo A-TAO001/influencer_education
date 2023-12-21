@@ -14,11 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('delivery_times', function (Blueprint $table) {
-            $table->bigIncrements('id',10)->nullable();
-            $table->integer('curriculums_id',10)->nullable()->unsigned();
+            $table->bigIncrements('id');
+            $table->bigInteger('curriculums_id')->unsigned()->nullable();
             $table->dateTime('delivery_from')->nullable();
             $table->dateTime('delivery_to')->nullable();
             $table->timestamps();
+
             $table->foreign('curriculums_id')->references('id')->on('curriculums');
         });
     }
