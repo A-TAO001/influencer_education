@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('curriculum_progress', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('curriculums_id')->constrained('curriculums');
-            $table->foreignId('users_id')->constrained('users');
+            $table->foreignId('curriculums_id');
+            $table->foreignId('users_id');
             $table->unsignedTinyInteger('clear_flg');
             $table->timestamps();
         });
