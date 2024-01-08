@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -41,6 +41,11 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function showRegistrationForm() {
+        return view('auth.register');
+    }
+
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -49,8 +54,10 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'name_kana' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -62,12 +69,25 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-    }
+    protected function create(\Illuminate\Http\Request $request)
+{
+    //dd($request->all());
+    // ユーザーを作成
+    $user = User::create([
+        'name' => $request->input('name'),
+        'name_kana' => $request->input('name_kana'),
+        'email' => $request->input('email'),
+        'password' => Hash::make($request->input('password')),
+    ]);
+
+    // ログイン処理を行わない
+
+    return redirect('/login');
+}
+// ユーザー登録後のリダイレクト先を指定
+// protected function registered(\Illuminate\Http\Request $request, $user)
+// {
+//     return redirect('/login');
+// }
+
 }

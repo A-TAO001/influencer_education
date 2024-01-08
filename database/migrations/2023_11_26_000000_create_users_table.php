@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('profile_image')->nullable();
-            $table->foreignId('classes_id')->constrained('classes');
+            $table->foreignId('classes_id')->default(1)->constrained('classes');
             $table->timestamps();
         });
     }
