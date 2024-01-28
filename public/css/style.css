@@ -1,0 +1,66 @@
+/* 追加するCSSスタイル */
+.mb-3 {
+  margin-left: 100px;
+}
+
+.container {
+  display: flex;
+}
+
+/* 追加するCSSスタイル */
+.mb-3 {
+  margin-left: 100px;
+}
+
+.container {
+  display: flex;
+}
+
+.cur_btns {
+  margin-right: 20px; /* 余白を調整 */
+}
+
+.cur_btns a {
+  display: block;
+  font-size: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  margin-right: 80px; /* 右側の余白 */
+  padding: 10px; /* ボタン内の余白 */
+  border: 1px solid #ccc; /* 枠線 */
+  border-radius: 10px; /* 四角丸 */
+}
+
+/* 選択された学年にスタイルを適用 */
+.cur_btns a:hover,
+.cur_btns a:focus {
+  background-color: #eee;
+  color: #fff; /* テキスト色を白に設定 */
+}
+
+.cur_btns .cur_primary a {
+  background-color: rgb(0, 213, 255); /* 小学生の背景色（青色） */
+}
+
+.cur_btns .cur_middle a {
+  background-color: #2ecc9a; /* 中学生の背景色（緑色） */
+}
+
+.cur_btns .cur_high a {
+  background-color: #5be73c; /* 高校生の背景色（赤色） */
+}
+
+.rtn_btn {
+  display: block;
+  font-size: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  margin-right: 80px; /* 右側の余白 */
+  padding: 10px; /* ボタン内の余白 */
+  border: 1px solid #ccc; /* 枠線 */
+  border-radius: 10px; /* 四角丸 */
+}

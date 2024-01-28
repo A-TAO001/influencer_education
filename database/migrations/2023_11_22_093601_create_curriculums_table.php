@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('thumbnail', 255)->nullable();
             $table->longText('description');
             $table->mediumText('video_url');
-            $table->tinyInteger('alway_delivery_flg')->nullable();
+            $table->tinyInteger('always_delivery_flg')->nullable();
             $table->unsignedBigInteger('classes_id');
             $table->timestamps();
             

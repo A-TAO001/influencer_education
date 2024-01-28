@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+<a href="{{ route('curriculums.index') }}" class="btn mb-3">←授業一覧に戻る</a>
 <div class="container">
-  <h1 class="mb-4">授業内容編集</h1>
 
-  <a href="{{ route('curriculums.index') }}" class="btn btn-primary mb-3">授業一覧に戻る</a>
+  <h1 class="mb-4">授業設定</h1>
 
   <form method="POST" action="{{ route('curriculums.store') }}" enctype="multipart/form-data">
     
@@ -27,7 +27,7 @@
     </div>
     <div class="mb-3">
       <label for="video_url" class="form-label">授業動画URL:</label>
-      <inout id="video_url" type="url" name="video_url" class="form-control" required>
+      <input id="video_url" type="url" name="video_url" class="form-control" required>
     </div>
     <div class="mb-3">
       <label for="description" class="form-label">授業概要:</label>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Curriculum;
+use App\Models\Delivery_time;
+use App\Models\ClassesTable as ClassName;
 use Illuminate\Http\Request;
 
 class Delivery_timeController extends Controller
@@ -46,11 +48,17 @@ class Delivery_timeController extends Controller
         return view('delivery_ti¥mes.show', ['delivery_time' => $delivery_time]);
     }
 
-    public function edit(Delivery_time $delivery_time)
+    public function edit($curriculumID, $delivery_timeId)
     {
         // $classes = Class::all();
+        $curriculum = Curriculum::find($curriculumId);
+        $delivery_time = DeliveryTime::find($deliveryTimeId);
 
-        return view('delivery_times.edit', compact('curriculums', 'delivery_time'));
+        // データが取得できたか確認
+        if (!$curriculum || !$delivery_time) {
+            abort(404); //　データが見つからない場合はエラー表示する
+        }
+        return view('delivery_times.edit', compact('curriculum', 'delivery_time'));
     }
 
     public function update(Request $request, Delivery_time $delivery_time)
