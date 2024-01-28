@@ -14,15 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('curriculums', function (Blueprint $table) {
-            $table->id();
-            $table->string('title', 255)->nullable();
-            $table->string('thumbnail', 255)->nullable();
-            $table->longText('description');
-            $table->mediumText('video_url');
-            $table->tinyInteger('always_delivery_flg')->nullable();
-            $table->unsignedBigInteger('classes_id');
+            $table->bigIncrements('id');
+            $table->string('title', 255)->notNullable();
+            $table->string('thumbnail', 255)->notNullable();
+            $table->longText('description')->notNullable();
+            $table->mediumText('video_url')->notNullable();
+            $table->tinyInteger('alway_delivery_flg')->notNullable();
+            $table->bigInteger('classes_id')->unsigned()->notNullable();
             $table->timestamps();
-            
+
             $table->foreign('classes_id')->references('id')->on('classes');
         });
     }
