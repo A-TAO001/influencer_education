@@ -28,4 +28,11 @@ Route::post('/register',[RegisterController::class,'create']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/user_top', [App\Http\Controllers\UserTopController::class, 'index'])->name('user_top');
+
+Route::get('/user_top', [App\Http\Controllers\UserTopController::class, 'showPage'])->name('user_top');
+Route::get('/articles/{id}', [App\Http\Controllers\UserTopController::class, 'show'])->name('articles.show');
+
+
+// Route::get('/user_top', [App\Http\Controllers\UserTopController::class, 'index'])->name('user_top');
+// Route::get('/user_top', [App\Http\Controllers\BannersController::class, 'showBanner'])->name('showBanner');
+// Route::get('/user_top', [App\Http\Controllers\UserTopController::class, 'showArticle'])->name('showArticle');

@@ -2,13 +2,12 @@
 
 @section('content')
 <div class="container">
+  <div class="login-header">
+    <a class="nav-auth" href="{{ route('register') }}">新規会員登録はこちら</a>
+  </div>
     <div class="row justify-content-center">
         <div class="col-md-8 login-container">
             <div class="position-relative">
-                <div class="header">
-                     <a class="nav-link" href="{{ route('register') }}">新規会員登録はこちら</a>
-                </div>
-
                 <div class="body text-center">ログイン</div>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

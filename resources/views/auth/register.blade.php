@@ -2,11 +2,12 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+   <div class="register-header">
+     <a class="nav-auth" href="{{ route('login') }}">ログインはこちら</a>
+   </div>
+     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="register-header">
-              <a class="nav-link" href="{{ route('login') }}">ログインはこちら</a>
-            </div>
+           
 
                 <div class="body">
                     <div class="title text-center">新規会員登録</div>

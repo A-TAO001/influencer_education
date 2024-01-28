@@ -2,10 +2,13 @@
     color: gray;
 }
 
-.nav-link {
+.login-header, .register-header{
     text-align: right;
-    font-size: 20px;
-    margin-right: auto;
+}
+
+.nav-auth{
+    color: gray;
+    font-size: 30px;
 }
 
 .text-center {
@@ -19,9 +22,121 @@
 }
 
 .login-btn,.register-btn {
-    background-color: rgb(224, 83, 51);
+    background-color: #F26B4A;
     color: #ffffff;
     font-size: 50px;
-    width: 350px;
+    width: 300px;
     border-radius: 0%;
+}
+
+.common_header{
+    background-color: #F26B4A;
+    height: 90px;
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 50px;
+}
+
+.header-menu {
+    display: flex;
+}
+
+.header-item{
+    background-color: #149397;
+    margin-right: 15px;
+    margin-top: 25px;
+    text-align: center;
+    border-radius: 10px;
+    height: 40px;
+    width: 150px;
+
+}
+
+li{
+    list-style: none;
+}
+
+ .nav-page-link{
+    color: #ffffff;
+} 
+
+a {
+    text-decoration:none; 
+    color: black;
+}
+
+#jikanwari{
+    font-size: 27px;
+}
+ 
+#shintyoku{
+    font-size: 27px;
+}
+
+.settei {
+    font-size: 18px;
+    padding-top: 6px;
+}
+
+.header-login{
+    margin-left: auto;
+    padding-right: 70px;
+}
+
+.nav-link {
+    font-size: 25px;
+    padding-top: 25px;
+    color: black;
+}
+
+.banner {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.default-banner{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.articles{
+    font-size: 35px;
+    margin-top: 30px;
+    text-align: left;
+    color: black;
+}
+
+.articles-box{
+    border-style: solid;
+    border-radius: 20px;
+}
+
+.table-row{
+    color: black;
+    font-size: 17px;
+}
+
+.table-data{
+    padding: 5px;
+}
+
+.article-title{
+    padding-left: 80px;
+}
+
+.banner-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.banner-buttons button {
+    border: none;
+    background-color: gray; 
+    border-radius: 50%;
+    width: 20px; /* Set your desired width */
+    height: 20px; /* Set your desired height */
+    margin: 5px;
+    cursor: pointer;
 }
