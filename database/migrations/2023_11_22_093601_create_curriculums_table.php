@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title', 255)->nullable();
             $table->string('thumbnail', 255)->nullable();
             $table->longText('description');
-            $table->mediumtext('video_url');
+            $table->mediumText('video_url');
             $table->tinyInteger('alway_delivery_flg')->nullable();
             $table->unsignedBigInteger('classes_id');
             $table->timestamps();
