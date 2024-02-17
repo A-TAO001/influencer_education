@@ -40,7 +40,7 @@ public function show($id)
 {
     $article = Article::findOrFail($id); 
 
-    return view('articles.show', ['article' => $article]); //articles.showの部分はbladeテンプレート名を聞いて変更する　メソッドも呼び出す
+    return view('articles_show', ['article' => $article]); //articles.showの部分はbladeテンプレート名を聞いて変更する　メソッドも呼び出す
 }
 
     

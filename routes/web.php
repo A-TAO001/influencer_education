@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\UserDeliveryController;
+use App\Http\Controllers\UserTopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +32,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('/user_top', [App\Http\Controllers\UserTopController::class, 'showPage'])->name('user_top');
-Route::get('/articles/{id}', [App\Http\Controllers\UserTopController::class, 'show'])->name('articles.show');
-
-
-// Route::get('/user_top', [App\Http\Controllers\UserTopController::class, 'index'])->name('user_top');
-// Route::get('/user_top', [App\Http\Controllers\BannersController::class, 'showBanner'])->name('showBanner');
-// Route::get('/user_top', [App\Http\Controllers\UserTopController::class, 'showArticle'])->name('showArticle');
+Route::get('/articles/{id}', [App\Http\Controllers\UserTopController::class, 'show'])->name('articles_show');
+Route::put('/user_delivery/{id}', [App\Http\Controllers\UserDeliveryController::class, 'markAsCompleted'])->name('mark_as_completed');
+Route::get('/user_delivery/{id}', [App\Http\Controllers\UserDeliveryController::class, 'showPage'])->name('user_delivery');

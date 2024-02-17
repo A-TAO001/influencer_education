@@ -36,7 +36,7 @@
                                          <tr class="table-row" data-id="{{ $article->id }}">
                                              <td class="table-data">{{ \Carbon\Carbon::parse($article->posted_date)->format('Y年m月d日') }}</td>
                                              <td class="table-data article-title">
-                                                <a href="{{ route('articles.show', ['id' => $article->id]) }}">{{ $article->title }}</a>
+                                                <a href="{{ route('articles_show', ['id' => $article->id]) }}">{{ $article->title }}</a>
                                              </td>
                                          </tr>
                                     @endforeach

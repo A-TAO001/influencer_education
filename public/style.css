@@ -135,8 +135,63 @@ a {
     border: none;
     background-color: gray; 
     border-radius: 50%;
-    width: 20px; /* Set your desired width */
-    height: 20px; /* Set your desired height */
+    width: 20px; 
+    height: 20px; 
     margin: 5px;
     cursor: pointer;
+}
+
+.back-top{
+    font-size: 30px;
+    margin-right: auto;
+}
+
+.video-clear-btn{
+    display: flex;
+    align-items: center;
+}
+
+.clear-btn{
+    margin-left: 20%;
+}
+
+.btn-clear{
+    width: 300px;
+    height: 80px;
+    color: #ffffff;
+    font-size: 30px;
+    background-color: #F26B4A;
+    border-radius: 20px;
+}
+
+.btn-clear:disabled {
+    background-color: #dddddd; 
+}
+
+
+.class-display{
+    background-color: #89E5F5;
+    color: #ffffff;
+    font-size: 20px;
+    width: 150px;
+    height: 35px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.curriculums-title{
+    font-size: 40px;
+    margin-top: 5px;
+}
+
+.curriculums-description{
+    font-size: 20px;
+    justify-content: center;
+    margin-right: 40px;
+}
+
+.disabled-video {
+    pointer-events: none;
+    opacity: 0.5;
 }
