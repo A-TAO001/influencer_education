@@ -8,7 +8,7 @@
 
 .nav-auth{
     color: gray;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .text-center {
@@ -22,11 +22,15 @@
 }
 
 .login-btn,.register-btn {
+    display: inline-block;
     background-color: #F26B4A;
+    text-align: center;
     color: #ffffff;
-    font-size: 50px;
-    width: 300px;
+    font-size: 45px;
+    width: 260px;
+    height:60px;
     border-radius: 0%;
+    line-height: 1.2;
 }
 
 .common_header{

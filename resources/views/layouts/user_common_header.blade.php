@@ -35,9 +35,9 @@
                  
                             
                         @guest
-                            @if (Route::has('login'))
+                            @if (Route::has('user.login'))
                                     <li class="header-login">
-                                        <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
+                                        <a class="nav-link" href="{{ route('user.login') }}">{{ __('ログイン') }}</a>
                                     </li>
                             @endif
                         @else

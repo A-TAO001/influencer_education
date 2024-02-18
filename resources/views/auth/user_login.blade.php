@@ -3,13 +3,13 @@
 @section('content')
 <div class="container">
   <div class="login-header">
-    <a class="nav-auth" href="{{ route('register') }}">新規会員登録はこちら</a>
+    <a class="nav-auth" href="{{ route('user.register') }}">新規会員登録はこちら</a>
   </div>
     <div class="row justify-content-center">
         <div class="col-md-8 login-container">
             <div class="position-relative">
                 <div class="body text-center">ログイン</div>
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('user.login') }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -40,29 +40,11 @@
                             </div>
                         </div>
 
-                        <!--<div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>-->
-
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn login-btn">
                                     ログイン
                                 </button>
-
-                                <!--@if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif-->
                             </div>
                         </div>
                     </form>

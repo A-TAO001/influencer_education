@@ -16,10 +16,7 @@ function changeBanner(index) {
 
 
 function markAsCompleted(curriculumId) {
-    // Ajaxリクエストの送信
-
     var url = $('[data-url="' + curriculumId + '"]').data('url');
-    // var url = $('#btn-clear-' + curriculumId).data('url');
     var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
     console.log('url:', url);
@@ -61,7 +58,7 @@ $(document).ready(function() {
         var deliveryTo = button.data('delivery-to');
         var clearFlag = button.data('clear-flag');
         var alwayDeliveryFlg = button.data('alway-delivery-flg');
-        var video = document.getElementById('video' + curriculumId); // 動画のIDを取得
+        var video = document.getElementById('video' + curriculumId); 
 
         console.log(alwayDeliveryFlg);
         console.log(curriculumId);

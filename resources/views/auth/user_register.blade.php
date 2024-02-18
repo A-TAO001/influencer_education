@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
    <div class="register-header">
-     <a class="nav-auth" href="{{ route('login') }}">ログインはこちら</a>
+     <a class="nav-auth" href="{{ route('user.login') }}">ログインはこちら</a>
    </div>
      <div class="row justify-content-center">
         <div class="col-md-8">
@@ -11,7 +11,7 @@
 
                 <div class="body">
                     <div class="title text-center">新規会員登録</div>
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('user.register') }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -34,7 +34,7 @@
                             <div class="col-md-6">
                                 <input id="name_kana" type="text" class="form-control @error('name_kana') is-invalid @enderror" name="name_kana" value="{{ old('name_kana') }}" required autocomplete="name_kana" autofocus>
 
-                                @error('name')
+                                @error('name_kana')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -78,7 +78,7 @@
                             </div>
                         </div>
 
-                        <div class="row mb-0">
+                        <div class="row mb-3">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn register-btn">
                                     登録

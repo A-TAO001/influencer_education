@@ -42,7 +42,7 @@ class RegisterController extends Controller
     }
 
     public function showRegistrationForm() {
-        return view('auth.register');
+        return view('auth.user_register');
     }
 
 
@@ -53,15 +53,19 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {
+{
+    $messages = [
+        'name_kana.regex' => 'カタカナで入力してください。',
+    ];
 
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'name_kana' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-    }
+    return Validator::make($data, [
+        'name' => ['required', 'string', 'max:255'],
+        'name_kana' => ['required', 'regex:/^[ァ-ヶー]+$/u', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        'password' => ['required', 'string', 'min:8', 'confirmed'],
+    ], $messages);
+}
+
 
     /**
      * Create a new user instance after a valid registration.
@@ -69,25 +73,21 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-    protected function create(\Illuminate\Http\Request $request)
+    /**
+ * Create a new user instance after a valid registration.
+ *
+ * @param  array  $data
+ * @return \App\Models\User
+ */
+protected function create(array $data)
 {
-    //dd($request->all());
-    // ユーザーを作成
-    $user = User::create([
-        'name' => $request->input('name'),
-        'name_kana' => $request->input('name_kana'),
-        'email' => $request->input('email'),
-        'password' => Hash::make($request->input('password')),
+    return User::create([
+        'name' => $data['name'],
+        'name_kana' => $data['name_kana'],
+        'email' => $data['email'],
+        'password' => Hash::make($data['password']),
     ]);
-
-    // ログイン処理を行わない
-
-    return redirect('/login');
 }
-// ユーザー登録後のリダイレクト先を指定
-// protected function registered(\Illuminate\Http\Request $request, $user)
-// {
-//     return redirect('/login');
-// }
+
 
 }

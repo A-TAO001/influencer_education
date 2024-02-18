@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="back-top">
-     <a class="back-page" href="{{ route('user_top') }}">{{ __('←戻る') }}</a>
+     <a class="back-page" href="{{ route('user.top') }}">{{ __('←戻る') }}</a>
 </div>
    <div class="delovery-container">  
        <div class="video-clear-btn">
@@ -13,7 +13,7 @@
                     data-delivery-from="{{ $deliveryTime->delivery_from }}"
                     data-delivery-to="{{ $deliveryTime->delivery_to }}"
                 @endif
-                data-url="{{ route('mark_as_completed', $curriculum->id) }}"
+                data-url="{{ route('mark.as.completed', $curriculum->id) }}"
                 @if ($clearFlag == 1)
                     data-clear-flag="{{ $clearFlag }}"
                 @endif>
@@ -22,7 +22,7 @@
             </div>
             <div class="clear-btn">
                  <button type="button" class="btn-clear" id="btn-clear-{{ $curriculum->id }}"
-                 data-url="{{ route('mark_as_completed', $curriculum->id) }}" data-curriculum-id="{{ $curriculum->id }}" data-delivery-from="{{ $deliveryTime->delivery_from }}" data-delivery-to="{{ $deliveryTime->delivery_to }}" data-clear-flag="{{ $clearFlag }}" data-alway-delivery-flg="{{ $alway_delivery_flg }}">受講しました</button>
+                 data-url="{{ route('mark.as.completed', $curriculum->id) }}" data-curriculum-id="{{ $curriculum->id }}" data-delivery-from="{{ $deliveryTime->delivery_from }}" data-delivery-to="{{ $deliveryTime->delivery_to }}" data-clear-flag="{{ $clearFlag }}" data-alway-delivery-flg="{{ $alway_delivery_flg }}">受講しました</button>
             </div>
        </div>
             <div class="class-display">{{ $curriculum->name }}</div>
