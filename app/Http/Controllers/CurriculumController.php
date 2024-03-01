@@ -12,19 +12,13 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Exception;
 
-class ClassesTableController extends Controller
+class CurriculumController extends Controller
 {
-    public function __construct(){
-
-        $this->classesTable = new ClassesTable();
-    
-    }
-    
-    public function index()
+    public function __construct()
     {
-        $classesTables = $this->classesTable->get();
-        $user = auth()->user();
+        $this->user = new User();
+        $this->curriculums = new Curriculum();
+    
 
-        return view('progress',compact('id'));
     }
 }

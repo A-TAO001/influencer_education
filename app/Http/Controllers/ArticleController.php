@@ -7,10 +7,20 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    public function article() {
 
-    $articles = Article::all();
+   public function __construct(){
 
-        return view('article', compact('articles'));
+        $this->article = new Article();
+     
     }
+    
+    public function index() {
+        
+        $articles = $this->article->findAllArticles();
+        $user = auth()->user();
+
+        return view('user_notice_index', compact('articles'));
+
+    }
+
 }

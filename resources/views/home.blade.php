@@ -15,6 +15,8 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <br>
+                    <a href="{{ route('user_notice.index') }}"  class = "back">←ユーザお知らせ一覧</a>
                 </div>
             </div>
         </div>
